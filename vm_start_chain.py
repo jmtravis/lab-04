@@ -62,6 +62,10 @@ if __name__ == '__main__':
     `client.on_connect` will be called."""
 
     client.connect(host="68.181.32.115", port=1883, keepalive=60)
+    
+    num = 0 
+    client.publish("jmtravis/pong",num)
+    
 
     """ask paho-mqtt to spawn a separate thread to handle
     incoming and outgoing mqtt messages."""
