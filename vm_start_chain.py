@@ -64,7 +64,7 @@ if __name__ == '__main__':
     client.connect(host="68.181.32.115", port=1883, keepalive=60)
     
     num = 0 
-    client.publish("jmtravis/pong",num)
+    client.publish("jmtravis/pong",f"{num}")
     
 
     """ask paho-mqtt to spawn a separate thread to handle
