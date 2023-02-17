@@ -46,7 +46,7 @@ if __name__ == '__main__':
     client = mqtt.Client()
     
      #attach a default callback which we defined above for incoming mqtt messages
-    client.on_message = on_message_from_pong
+    client.on_message = on_message
     
     #attach the on_connect() callback function defined above to the mqtt client
     client.on_connect = on_connect
@@ -61,7 +61,7 @@ if __name__ == '__main__':
     client. If the connection request is successful, the callback attached to
     `client.on_connect` will be called."""
 
-    client.connect(host="68.181.32.115", port=1883, keepalive=60)
+    client.connect(host= ip_address, port=1883, keepalive=60)
     
     num = 0 
     client.publish("jmtravis/pong",f"{num}")
