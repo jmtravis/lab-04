@@ -63,10 +63,11 @@ if __name__ == '__main__':
 
     client.connect(host= ip_address, port=1883, keepalive=60)
     
+    client.loop_start()
     num = 0 
     client.publish("jmtravis/pong",f"{num}")
     
 
     """ask paho-mqtt to spawn a separate thread to handle
     incoming and outgoing mqtt messages."""
-    client.loop_forever()
+    
