@@ -46,7 +46,7 @@ if __name__ == '__main__':
     client = mqtt.Client()
     
      #attach a default callback which we defined above for incoming mqtt messages
-    client.on_message = on_message
+    client.on_message = on_message_from_pong
     
     #attach the on_connect() callback function defined above to the mqtt client
     client.on_connect = on_connect
