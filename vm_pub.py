@@ -47,9 +47,10 @@ if __name__ == '__main__':
 
         #get date and time 
         """your code here"""
-        print(datetime.now.date())
-        print(datetime.now.time())
+        now = datetime.now()
+        print(now.date())
+        print(now.time())
         #publish date and time in their own topics
         """your code here"""
-        client.publish("jmtravis/dateinfo", f"{datetime.now.date()}")
-        client.publish("jmtravis/timeinfo", f"{datetime.now.time()}")
+        client.publish("jmtravis/dateinfo", f"{now.date()}")
+        client.publish("jmtravis/timeinfo", f"{now.time()}")
