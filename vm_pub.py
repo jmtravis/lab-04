@@ -38,8 +38,8 @@ if __name__ == '__main__':
     incoming and outgoing mqtt messages."""
     client.loop_start()
     time.sleep(1)
-    
- while True:
+   
+    while True:
         #replace user with your USC username in all subscriptions
         client.publish("jmtravis/ipinfo", f"{ip_address}")
         print("Publishing ip address")
