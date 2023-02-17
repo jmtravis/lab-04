@@ -65,8 +65,12 @@ if __name__ == '__main__':
     
     client.loop_start()
     num = 0 
-    client.publish("jmtravis/pong",f"{num}")
+    client.publish("jmtravis/ping",f"{num}")
     
+    while True:
+        pass
+    
+        
 
     """ask paho-mqtt to spawn a separate thread to handle
     incoming and outgoing mqtt messages."""
