@@ -38,8 +38,8 @@ if __name__ == '__main__':
     incoming and outgoing mqtt messages."""
     client.loop_start()
     time.sleep(1)
-
-    while True:
+    
+ while True:
         #replace user with your USC username in all subscriptions
         client.publish("jmtravis/ipinfo", f"{ip_address}")
         print("Publishing ip address")
@@ -47,9 +47,9 @@ if __name__ == '__main__':
 
         #get date and time 
         """your code here"""
-        print(datetime.date)
-        print(datetime.time)
+        print(datetime.now.date())
+        print(datetime.now.time())
         #publish date and time in their own topics
         """your code here"""
-        client.publish("jmtravis/dateinfo", f"{datetime.date}")
-        client.publish("jmtravis/timeinfo", f"{datetime.time}")
+        client.publish("jmtravis/dateinfo", f"{datetime.now.date()}")
+        client.publish("jmtravis/timeinfo", f"{datetime.now.time()}")
