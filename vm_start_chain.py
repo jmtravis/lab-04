@@ -65,4 +65,4 @@ if __name__ == '__main__':
 
     """ask paho-mqtt to spawn a separate thread to handle
     incoming and outgoing mqtt messages."""
-    client.loop_start()
+    client.loop_forever()
