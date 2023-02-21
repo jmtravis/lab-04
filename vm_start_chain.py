@@ -3,6 +3,7 @@ import time
 from datetime import datetime
 import socket
 
+# Code by: Jaya Travis 
 """This function (or "callback") will be executed when this client receives 
 a connection acknowledgement packet response from the server. """
 
@@ -30,7 +31,7 @@ callback has not been registered using paho-mqtt's message_callback_add()."""
 def on_message(client, userdata, msg):
     print("Default callback - topic: " + msg.topic + "   msg: " + str(msg.payload, "utf-8"))
 
-#Custom message callback.
+# Message callback and increment 1 from pong.
 def on_message_from_pong(client, userdata, message):
     num = int(message.payload.decode())+1 
     client.publish("jmtravis/ping", f"{num}")
@@ -63,6 +64,7 @@ if __name__ == '__main__':
 
     client.connect(host= ip_address, port=1883, keepalive=60)
     
+    # Send the first integer
     client.loop_start()
     num = 0 
     client.publish("jmtravis/ping",f"{num}")
