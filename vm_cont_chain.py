@@ -3,6 +3,7 @@ import time
 from datetime import datetime
 import socket
 
+# Code by: Jaya Travis 
 """This function (or "callback") will be executed when this client receives 
 a connection acknowledgement packet response from the server. """
 
@@ -30,7 +31,7 @@ callback has not been registered using paho-mqtt's message_callback_add()."""
 def on_message(client, userdata, msg):
     print("Default callback - topic: " + msg.topic + "   msg: " + str(msg.payload, "utf-8"))
 
-#Custom message callback.
+# Message callback and increment integer.
 def on_message_from_ping(client, userdata, message):
     num = int(message.payload.decode())+1 
     client.publish("jmtravis/pong", f"{num}")
@@ -56,7 +57,9 @@ if __name__ == '__main__':
     The keepalive interval indicates when to send keepalive packets to the 
     server in the event no messages have been published from or sent to this 
     client. If the connection request is successful, the callback attached to
-    `client.on_connect` will be called."""    
+    `client.on_connect` will be called."""   
+    
+    # Connect to RaspberryPi as Broker
     client.connect(host="172.20.10.5", port=1883, keepalive=60)
 
     """In our prior labs, we did not use multiple threads per se. Instead, we
