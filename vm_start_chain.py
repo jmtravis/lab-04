@@ -62,6 +62,7 @@ if __name__ == '__main__':
     client. If the connection request is successful, the callback attached to
     `client.on_connect` will be called."""
 
+    # Connect to RaspberryPi as Broker
     client.connect(host= ip_address, port=1883, keepalive=60)
     
     # Send the first integer
